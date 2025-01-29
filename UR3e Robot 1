@@ -1,0 +1,1310 @@
+<URProgram name="WholeAssemblyDemo" installation="default" installationRelativePath="default" directory="/programs/usbdisk_1" createdIn="5.13.0" lastSavedIn="5.13.0" robotSerialNumber="20235300341" createdInPolyscopeProgramVersion="2" lastSavedInPolycopeProgramVersion="2" crcValue="1890933035">
+  <kinematics status="LINEARIZED" validChecksum="true">
+    <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+    <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+    <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+    <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+    <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+  </kinematics>
+  <children>
+    <InitVariablesNode/>
+    <MainProgram runOnlyOnce="false" InitVariablesNode="false">
+      <children>
+        <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+          <feature class="GeomFeatureReference" referencedName="Joint_0_name"/>
+          <children>
+            <Waypoint type="Fixed" name="Screw1TopPick" kinematicsFlags="6">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="-3.2507148424731653, -2.9637986622252406, -2.195688247680664, 0.33202187597241206, -0.774787727986471, 1.36639404296875"/>
+                <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                  <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                  <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                  <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                  <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+        <Wait type="Sleep">
+          <waitTime>57.0</waitTime>
+        </Wait>
+        <CallSubProgram>
+          <subprogram name="ScrewPlacing" keepHidden="false" keepSynchronizedWithDisk="true">
+            <programFile>/programs/ScrewPlacing.urp</programFile>
+            <children>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin referencedName="tool_out[0]"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2507148424731653, -2.9637986622252406, -2.195688247680664, 0.33202187597241206, -0.774787727986471, 1.36639404296875"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.43423301378359, -2.60864319423818, -2.2263388633728027, -0.17012675226245122, -0.8127730528460901, 1.619476556777954"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin referencedName="tool_out[1]"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2507148424731653, -2.9637986622252406, -2.195688247680664, 0.33202187597241206, -0.774787727986471, 1.36639404296875"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.6597257296191614, -3.287523408929342, -1.399113655090332, -0.5004041951945801, -0.8969486395465296, 1.896065354347229"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1Place" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7793825308429163, -3.085771223107809, -1.3965660333633423, -0.7830639642528077, -0.9562538305865687, 2.0266637802124023"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.6597257296191614, -3.287523408929342, -1.399113655090332, -0.5004041951945801, -0.8969486395465296, 1.896065354347229"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1908679644214075, -2.9283458195128382, -1.6827847957611084, -0.1555432838252564, -0.7702534834491175, 1.2812952995300293"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.3352368513690394, -2.6889831028380335, -1.7223070859909058, -0.500843958263733, -0.7889745871173304, 1.4855800867080688"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1908679644214075, -2.9283458195128382, -1.6827847957611084, -0.1555432838252564, -0.7702534834491175, 1.2812952995300293"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.5474723021136683, -3.395677228967184, -1.161862850189209, -0.5440467160991211, -0.8499601523028772, 1.7626571655273438"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2Place" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.6930814425097864, -3.156764169732565, -1.1926767826080322, -0.8607942026904603, -0.9129527250873011, 1.933502197265625"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw2TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.5474723021136683, -3.395677228967184, -1.161862850189209, -0.5440467160991211, -0.8499601523028772, 1.7626571655273438"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2221365610705774, -2.959499021569723, -2.1021220684051514, 0.26309160768475337, -0.7719548384295862, 1.3256947994232178"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.4094224611865442, -2.6114818058409632, -2.136868953704834, -0.23412235200915532, -0.8059104124652308, 1.5865166187286377"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2221365610705774, -2.959499021569723, -2.1021220684051514, 0.26309160768475337, -0.7719548384295862, 1.3256947994232178"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.672734800969259, -3.7249518833556117, -0.4541635513305664, -1.016531304722168, -0.9030969778644007, 1.9096474647521973"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3Place" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7972973028766077, -3.511977811852926, -0.4939894676208496, -1.2695604127696534, -0.965614144002096, 2.044128894805908"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw3TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.672734800969259, -3.7249518833556117, -0.4541635513305664, -1.016531304722168, -0.9030969778644007, 1.9096474647521973"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2225547472583216, -2.9170600376524867, -2.0263009071350098, 0.14430253087963862, -0.7720945517169397, 1.3263707160949707"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.390909496937887, -2.6135107479491175, -2.0496513843536377, -0.30219896257434087, -0.8012498060809534, 1.5615489482879639"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2225547472583216, -2.9170600376524867, -2.0263009071350098, 0.14430253087963862, -0.7720945517169397, 1.3263707160949707"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4TopPlace" kinematicsFlags="2">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.6779430548297327, -3.9632519684233607, 0.2084596792804163, -1.4439001840404053, -0.9057810942279261, 1.9145501852035522"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4Place" kinematicsFlags="2">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.767829481755392, -3.8131238422789515, 0.189918343220846, -1.6341177425780238, -0.9501684347735804, 2.0124154090881348"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw4TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.6779430548297327, -3.9632519684233607, 0.2084596792804163, -1.4439001840404053, -0.9057810942279261, 1.9145501852035522"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5PickTop" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1640780607806605, -2.986727853814596, -1.7857857942581177, 0.03815238058056636, -0.7773311773883265, 1.2388567924499512"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.35587984720339, -2.6613856754698695, -1.8336191177368164, -0.42946727693591313, -0.8003461996661585, 1.5083911418914795"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5PickTop" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1640780607806605, -2.986727853814596, -1.7857857942581177, 0.03815238058056636, -0.7773311773883265, 1.2388567924499512"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.500658098851339, -3.4579998455443324, -0.892312228679657, -0.703291730289795, -0.8392189184771937, 1.697646141052246"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5Place" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.637726132069723, -3.2379986248412074, -0.9263498187065125, -0.9971082967570801, -0.8923576513873499, 1.8641277551651"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.04" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw5TopPlace" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.500658098851339, -3.4579998455443324, -0.892312228679657, -0.703291730289795, -0.8392189184771937, 1.697646141052246"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Screw1TopPick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2507148424731653, -2.9637986622252406, -2.195688247680664, 0.33202187597241206, -0.774787727986471, 1.36639404296875"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+            </children>
+          </subprogram>
+        </CallSubProgram>
+        <Wait type="Sleep">
+          <waitTime>50.0</waitTime>
+        </Wait>
+        <CallSubProgram>
+          <subprogram name="NutPlacing" keepHidden="false" keepSynchronizedWithDisk="false">
+            <programFile>/programs/NutPlacing.urp</programFile>
+            <children>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut1Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.0694943110095423, -2.9015265903868617, -2.250640392303467, 0.5096639829822998, -0.7713606993304651, 1.1295967102050781"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut1" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.300326649342672, -2.4510861835875453, -2.3013596534729004, -0.12635000169787602, -0.7832620779620569, 1.4600896835327148"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>1.0</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut1Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.0694943110095423, -2.9015265903868617, -2.250640392303467, 0.5096639829822998, -0.7713606993304651, 1.1295967102050781"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="TopPlaceNut1" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.5918951670276087, -3.332593103448385, -1.1953091621398926, -0.611334041958191, -0.8757484594928187, 2.2992913722991943"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Nut1Assemble" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.662835184727804, -3.2079607448973597, -1.21225905418396, -0.7705235642245789, -0.9069965521441858, 2.3814730644226074"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Force type="Simple">
+                <feature referencedName="Joint_6_name"/>
+                <selection value="0, 0, 1, 0, 0, 0"/>
+                <wrench value="0.0, 0.0, 0.95, 0.0, 0.0, 0.0"/>
+                <limitsForce value="0.15, 0.15, 0.15, 1.0471975511965976, 1.0471975511965976, 1.0471975511965976"/>
+                <limitsMotion value="0.1, 0.1, 0.1, 0.3490658503988659, 0.3490658503988659, 0.3490658503988659"/>
+                <children>
+                  <Script type="File">
+                    <cachedContents>speedj([0,0,0,0,0,3], 0.5, 15)
+</cachedContents>
+                    <file>/programs/BigScrew.script</file>
+                  </Script>
+                </children>
+              </Force>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="TopPlaceNut1" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.5918951670276087, -3.332593103448385, -1.1953091621398926, -0.611334041958191, -0.8757484594928187, 2.2992913722991943"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut2Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1015451590167444, -2.8370548687376917, -2.212252140045166, 0.36558787404980464, -0.7746122519122522, 1.6403791904449463"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut2" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.3178516069995325, -2.444207807580465, -2.3872711658477783, -0.06456525743518071, -0.7863090674029749, 1.484551191329956"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>1.0</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut2Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.1015451590167444, -2.8370548687376917, -2.212252140045166, 0.36558787404980464, -0.7746122519122522, 1.6403791904449463"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut2Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.666131321583883, -3.2869721851744593, -1.3948330879211426, -0.5111935895732422, -0.9081252256976526, 2.3851168155670166"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut2" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7468977610217493, -3.149411817590231, -1.404327154159546, -0.6921805900386353, -0.9475882689105433, 2.4735403060913086"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Force type="Simple">
+                <feature reference="../../Force/feature"/>
+                <selection value="0, 0, 1, 0, 0, 0"/>
+                <wrench value="0.0, 0.0, 0.95, 0.0, 0.0, 0.0"/>
+                <limitsForce value="0.15, 0.15, 0.15, 1.0471975511965976, 1.0471975511965976, 1.0471975511965976"/>
+                <limitsMotion value="0.1, 0.1, 0.1, 0.3490658503988659, 0.3490658503988659, 0.3490658503988659"/>
+                <children>
+                  <Script type="File">
+                    <cachedContents>speedj([0,0,0,0,0,3], 0.5, 12)
+</cachedContents>
+                    <file>/programs/SmallScrew.script</file>
+                  </Script>
+                </children>
+              </Force>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut2Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.666131321583883, -3.2869721851744593, -1.3948330879211426, -0.5111935895732422, -0.9081252256976526, 2.3851168155670166"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut3Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.141400400792257, -2.750472684899801, -2.1900436878204346, 0.21597997724499507, -0.7744324843036097, 1.6975979804992676"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="Nut3Pick" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.2946675459491175, -2.461051126519674, -2.1956920623779297, -0.22229381025347905, -0.78870135942568, 1.9151787757873535"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set[2]/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>1.0</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PickNut3Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.141400400792257, -2.750472684899801, -2.1900436878204346, 0.21597997724499507, -0.7744324843036097, 1.6975979804992676"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.25" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut3Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7117746512042444, -3.6632148228087367, -0.492795467376709, -1.066943721180298, -0.9300215880023401, 2.434701442718506"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut3" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7866581122027796, -3.5388037166991175, -0.5050561428070068, -1.2252369982055207, -0.968276325856344, 2.51421856880188"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+              <Force type="Simple">
+                <feature reference="../../Force/feature"/>
+                <selection value="0, 0, 1, 0, 0, 0"/>
+                <wrench value="0.0, 0.0, 0.95, 0.0, 0.0, 0.0"/>
+                <limitsForce value="0.15, 0.15, 0.15, 1.0471975511965976, 1.0471975511965976, 1.0471975511965976"/>
+                <limitsMotion value="0.1, 0.1, 0.1, 0.3490658503988659, 0.3490658503988659, 0.3490658503988659"/>
+                <children>
+                  <Script type="File">
+                    <cachedContents>speedj([0,0,0,0,0,3], 0.5, 12)
+</cachedContents>
+                    <file>/programs/SmallScrew.script</file>
+                  </Script>
+                </children>
+              </Force>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Set type="SingleDigitalPulseActionState">
+                <SingleDigitalPulseActionState hiPulseInSeconds="0.5">
+                  <pin reference="../../../../../../CallSubProgram/subprogram/children/Set/SingleDigitalPulseActionState/pin"/>
+                </SingleDigitalPulseActionState>
+              </Set>
+              <Wait type="Sleep">
+                <waitTime>0.5</waitTime>
+              </Wait>
+              <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+                <feature class="GeomFeatureReference" reference="../../../../../Move/feature"/>
+                <children>
+                  <Waypoint type="Fixed" name="PlaceNut3Top" kinematicsFlags="6">
+                    <motionParameters/>
+                    <position>
+                      <JointAngles angles="-3.7117746512042444, -3.6632148228087367, -0.492795467376709, -1.066943721180298, -0.9300215880023401, 2.434701442718506"/>
+                      <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                      <Kinematics status="LINEARIZED" validChecksum="true">
+                        <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                        <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                        <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                        <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                        <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                      </Kinematics>
+                    </position>
+                    <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                  </Waypoint>
+                </children>
+              </Move>
+            </children>
+          </subprogram>
+        </CallSubProgram>
+        <Move motionType="MoveL" speed="0.1" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+          <feature class="GeomFeatureReference" reference="../../Move/feature"/>
+          <children>
+            <Waypoint type="Fixed" name="ShowFingers" kinematicsFlags="4">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="-3.5426159540759485, -2.5370408497252406, -1.8655015230178833, 0.12120024740185542, 0.9061971306800842, 49.24311372435378"/>
+                <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                  <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                  <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                  <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                  <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+        <Wait type="Sleep">
+          <waitTime>55.0</waitTime>
+        </Wait>
+        <Move motionType="MoveL" speed="0.06" acceleration="1.2" useActiveTCP="true" positionType="CartesianPose">
+          <feature class="GeomFeatureReference" reference="../../Move/feature"/>
+          <children>
+            <Waypoint type="Fixed" name="End" kinematicsFlags="6">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="-2.8902772108661097, -2.23038973430776, -2.137911319732666, -0.0718580049327393, -0.8155539671527308, 49.50054189360427"/>
+                <TCPOffset pose="2.5673436832202023E-4, 0.0022881442717056985, 0.22945047197289736, 0.012899999999999997, 0.010399999999999996, 0.38549999999999995"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-3.060229077297971E-7, 0.33052360158122873, 5.523280824549591, 0.4293816468866976, -9.24169737610489E-7, 2.850392675536606E-8"/>
+                  <a value="-8.126584544170681E-5, -0.23047108334596458, -0.19393959869037167, -1.1574532381655157E-5, -1.2946784669819983E-4, 0.0"/>
+                  <d value="0.15190174564574604, 48.03357643651666, 36.25188106544152, -84.1546348820025, 0.08530861041386094, 0.0919148766870179"/>
+                  <alpha value="1.5706843880628862, 0.0016462975902388204, -0.0010535513758122266, 1.5714753001329804, -1.5718956217756583, 0.0"/>
+                  <jointChecksum value="-1273519751, -1271481676, 871992117, -1279209478, -1279420972, -1279469575"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+        <Halt/>
+      </children>
+    </MainProgram>
+    <SubProgram reference="../MainProgram/children/CallSubProgram[2]/subprogram"/>
+    <SubProgram reference="../MainProgram/children/CallSubProgram/subprogram"/>
+  </children>
+</URProgram>
